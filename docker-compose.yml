@@ -1,0 +1,34 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: admin123
+      WORDPRESS_DB_NAME: sumanth
+    volumes:
+      - wordpress:/var/www/html
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: db
+      MYSQL_USER: sumanth
+      MYSQL_PASSWORD: admin
+      MYSQL_RANDOM_ROOT_PASSWORD: 1 # removed quotes here
+    volumes:
+      - db:/var/lib/mysql
+    expose:
+      - 3306
+      - 33060
+
+volumes:
+  wordpress:
+  db:
