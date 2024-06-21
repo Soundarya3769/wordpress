@@ -9,7 +9,7 @@ services:
       - 80:80
     environment:
       WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: sumanth
+      WORDPRESS_DB_USER: soundarya
       WORDPRESS_DB_PASSWORD: admin
       WORDPRESS_DB_NAME: wordpress
     volumes:
@@ -20,7 +20,7 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: wordpress
-      MYSQL_USER: sumanth
+      MYSQL_USER: soundarya
       MYSQL_PASSWORD: admin
       MYSQL_RANDOM_ROOT_PASSWORD: 1 # removed quotes here
     volumes:
